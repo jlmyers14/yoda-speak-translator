@@ -1,0 +1,8 @@
+ul {
+    list-style-type: none;
+}
+
+#footer {
+    position: relative;
+    nav-down: 800px;
+}
