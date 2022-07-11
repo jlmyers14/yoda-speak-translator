@@ -1,8 +1,21 @@
+#header {
+    color: #006400;
+}
+
+h1 {
+    font-size: 60px;
+}
+
 ul {
     list-style-type: none;
 }
 
-#footer {
+body{
+    text-align: center;
+}
+
+#footerText {
     position: relative;
-    nav-down: 800px;
+    margin-top: 640px;
+    text-align: left;
 }
