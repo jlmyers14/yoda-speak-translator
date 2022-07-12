@@ -6,16 +6,28 @@ h1 {
     font-size: 60px;
 }
 
+h2 {
+    font-size: 35px;
+}
+
 ul {
     list-style-type: none;
 }
 
 body{
     text-align: center;
+
 }
 
 #footerText {
     position: relative;
     margin-top: 640px;
     text-align: left;
+}
+
+#background-image{
+    background-image: url(assets/yoda1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 10vh;
 }
