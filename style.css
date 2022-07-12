@@ -1,34 +1,78 @@
+@font-face {
+    font-family: StarJedi;
+    src: url('SF Distant Galaxy Outline.ttf');
+}
+
+@font-face {
+    font-family: StarJedi2;
+    src: url('SF Distant Galaxy.ttf');
+}
+
+/* trying to get the text to crawl up the screen on loading the page */
+/* .crawl {
+    position: relative;
+    top: 99999px;
+    transform-origin: 50% 100%;
+    animation: crawl 60s linear;
+  } */
+
 #header {
-    color: #006400;
+    color: #faebd7;
+    font-family: StarJedi;
 }
 
 h1 {
     font-size: 60px;
+    font-family: StarJedi;
 }
 
-h2 {
-    font-size: 35px;
+#yoda-banner {
+    background-position: center;
+    height: 60vh;
+}
+
+#speak-like-yoda-text {
+    font-size: 25px;
+    top: 200px;
+    font-family: StarJedi;
 }
 
 ul {
     list-style-type: none;
+    font-family: StarJedi;
 }
 
-body{
+#background-image {
+    color: #faebd7;
     text-align: center;
-
+    background-image: url('assets/yoda1.jpg');
+    background-size: cover;
+    width: 1920px;
+    font-family: StarJedi;
 }
 
 #footer-text {
+    color: #faebd7;
     position: relative;
-    margin-top: 640px;
+    margin-top: 730px;
     text-align: left;
+    right: 40px;
 }
 
-#background-image{
-    background-image: url(assets/yoda1.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 60vh;
+input[type="text"]{
+    width: 400px;
+    height: 25px;
+    border-radius: 25px;
+    font-family: StarJedi2;
+}
+
+#user-input{
+    border-radius: 25px;
+    position: relative;
+    left: -78px;
+    top: -2px;
+}
+
+#string-output{
+    text-align: center;
 }

@@ -3,6 +3,7 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="style.css"/>
+    <script type='text/javascript' src="config.js" defer></script>
     <script src="script.js" defer></script>
     <title>Yodish Translator</title>
   </head>
@@ -11,23 +12,31 @@
     <h1>Wise Words of Master Yoda</h1>
       <div class = "header-image">
       </h1>
-    <h2>Learn to speak like Yoda you can!</h2>
-    <p>Ever have you wanted to sound wise beyond one's years? But have the 
-       knowledge or vocabulary you didn't? For you, this English to Yoda text translator is.
+    <h2 id="speak-like-yoda-text">Learn to speak like Yoda you can!</h2>
+    <p>Ever have you wanted to sound wise beyond one's years? 
+      <br>But have the knowledge or vocabulary you didn't? 
+      <br>For you, this English to Yoda text translator is:
     </p>
     </header>
-  <body>
-    <div id="background-image"></div>
-    <p>Example: Master Obiwan has left on a journey.
+
+<body id="background-image"></body>
+
+  <body id="text-body">
+    <!-- <p>Example: Master Obiwan has left on a journey.
       <br>
         Left on a journey, Master Obiwan has.
-    </p>
+    </p> -->
     <form class="new-yodish">
-        <label>Goes here, your input text does:</label>
         <br>
-        <input type="text" name="yodish" id="new-yodish-string" value = "" />
+           
+        <input type="text" name="yodish" id="new-yodish-string" 
+        placeholder="Goes here, your input text does."value = "" />
+
         <input id="user-input" type="submit" value="Translate" />
     </form>
+    <div id='output'>
+      
+    </div>
   </body>
 
   <footer id="footer">
@@ -35,10 +44,9 @@
         <ul id="footer-text">
             <li>Authors: Garret Gallant, Justin Myers, Tyler DiRaffaele</li>
             <li>Publication Date: July 11th, 2022</li>
-            <li>Credit to API: Yoda Speak (https://funtranslations.com/yoda)</li>
+            <li>Credit to APi: Yoda Speak (https://funtranslations.com/yoda)</li>
         </ul>
     </div>
   </footer>
   
-
 </html>
