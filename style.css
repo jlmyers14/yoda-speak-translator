@@ -19,7 +19,7 @@ body{
 
 }
 
-#footerText {
+#footer-text {
     position: relative;
     margin-top: 640px;
     text-align: left;
@@ -29,5 +29,6 @@ body{
     background-image: url(assets/yoda1.jpg);
     background-size: contain;
     background-repeat: no-repeat;
-    height: 10vh;
+    background-position: center;
+    height: 60vh;
 }

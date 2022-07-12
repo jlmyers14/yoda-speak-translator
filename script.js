@@ -1,27 +1,23 @@
 //javascript for YodaSpeak API 
-console.log("Hello world!")
 let url = 'https://api.funtranslations.com/translate/yoda.json'
 
 function getYodish(stringToConvert){
     let newUrl = `${url}?text=${stringToConvert}`
-fetch(newUrl)
-.then((data)=>data.json())
-.then((data) => console.log(data))
+    fetch(newUrl)
+    .then((data)=>data.json())
+    .then((data) => console.log(data))
 }
 
-const userTextBox = document.getElementsByClassName('new-yodish')
-// userTextBox.addEventListener('click', function(e){
-//     e.preventDefault()
+const userTranslateButton = document.getElementById('user-input')
+const userTextBox = document.getElementById('new-yodish-string')
 
+
+
+// userTranslateButton.addEventListener('click', function takeUserInput(e){
+//     e.preventDefault();
+    
 //     let userInput = userTextBox.value
-//     console.log(userInput)
+//     const yodishString = (getYodish(userInput))
+//     console.log(yodishString.translated)
 // })
 
-console.log(userTextBox)
-// console.log(userInput)
-
-
-
-
-
-// console.log(getYodish(userInput))
