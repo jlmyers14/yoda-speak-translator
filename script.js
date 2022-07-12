@@ -1,6 +1,5 @@
 //javascript for YodaSpeak API 
 console.log("Hello world!")
-
 let url = 'https://api.funtranslations.com/translate/yoda.json'
 
 function getYodish(stringToConvert){
