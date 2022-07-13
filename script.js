@@ -23,6 +23,10 @@ function getYodish(stringToConvert){
     .then((data) => yodishObject = data)
 }
 
+// ! debug double click issue
+// ! Figure out why it zooms every time we click
+// ! Take a look at the weird 2 body thing
+
 //eventlistener that runs the getYodish function with a user provided string to return conversion
 userTranslateButton.addEventListener('click', function takeUserInput(e){
     e.preventDefault();
