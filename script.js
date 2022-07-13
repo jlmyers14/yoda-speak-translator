@@ -1,4 +1,10 @@
 var API_KEY = config.API_KEY
+//GOALS FOR THE REMAINDER OF THE PROJECT
+// ! debug double click issue
+// ! Figure out why it zooms every time we click
+// ! Take a look at the weird 2 body thing
+// ! Add 2 more event listeners (light/dark theme sith yoda) (upvote/save favorite yoda-isms)
+// ! implement array iteration
 
 //global declarations
 let url = 'https://api.funtranslations.com/translate/yoda.json'
@@ -23,10 +29,6 @@ function getYodish(stringToConvert){
     .then((data) => yodishObject = data)
 }
 
-// ! debug double click issue
-// ! Figure out why it zooms every time we click
-// ! Take a look at the weird 2 body thing
-
 //eventlistener that runs the getYodish function with a user provided string to return conversion
 userTranslateButton.addEventListener('click', function takeUserInput(e){
     e.preventDefault();
@@ -36,18 +38,12 @@ userTranslateButton.addEventListener('click', function takeUserInput(e){
     const yodishString = yodishObject.contents.translated
     console.log(yodishString)
 
-    //appends
+    //Take yodish said prior, and put it in an array. use that array to add yoda-isms log on a different page
     const stringToOutput = document.createElement('p')
     stringToOutput.textContent = yodishString
     newYodishStringOutput.append(stringToOutput)
 })
 
-// function renderNewYodish(){
-//     const stringToOutput = document.createElement('p')
-//     stringToOutput.textContent = "this string needs to be yodish" //replace with relevant data once we can. Optimally this data is the translated yodish returned by our API
-//     stringToOutput.setAttribute('id', 'string-output')
-//     newYodishStringOutput.append(stringToOutput)
-// }
 
 
 
