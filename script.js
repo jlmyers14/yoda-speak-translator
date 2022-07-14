@@ -1,8 +1,7 @@
-const {API_KEY} = config.API_KEY
+// const {API_KEY} = config.API_KEY
 
 // !GOALS FOR THE REMAINDER OF THE PROJECT!
-// ! Debug double click issue
-// ! Fix color of text in favorites and history box
+// ! Fix color of text in favorites and history box - Dumb Chrome Bug
 
 //  Look into scaling the website to different resolutions
 
@@ -11,13 +10,12 @@ const {API_KEY} = config.API_KEY
 
 //global declarations
 let url = 'https://api.funtranslations.com/translate/yoda.json'
-let yodishObject = {}
 const userTranslateButton = document.getElementById('user-input')
 const userTextBox = document.getElementById('new-yodish-string')
 const newYodishStringOutput = document.getElementById('output')
 const lightDarkButton = document.getElementById('light-dark')
 const history = document.getElementById('yodism-history-nest')
-const favoritesMenu = document.getElementById('table-values')
+const favoritesMenu = document.getElementById('yodism-favorite-inner')
 let favoritesButton = document.createElement('button')
 const upvoteArray = []
 let image1 = true;
@@ -29,18 +27,18 @@ function getYodish(stringToConvert){
   const configPolicy = {
     method: "GET",
     headers: {
-      "X-FunTranslations-Api-Secret": API_KEY
+      "X-FunTranslations-Api-Secret": 'kS682ejBG9yP5ldaGbyOUQeF'
     }
   }
   let newUrl = `${url}?text=${stringToConvert}`
   
   fetch(newUrl, configPolicy)
   .then((data) => data.json())
-  .then((data) => {
-    yodishObject = data.contents
-  })  
+  .then((data) => populateYodish(data))
 }
-//How to fix this double click issue?
+
+// Fixed double click issue. Click listeners creating other click listeners. 
+// (issue with scope of click listeners)
 
 //eventlistener that allows user to switch between the light and dark side
 lightDarkButton.addEventListener('click', function (e) {
@@ -64,32 +62,30 @@ lightDarkButton.addEventListener('click', function (e) {
   }
 })
 
-//eventlistener that runs the getYodish function with a user provided string to return conversion
-userTranslateButton.addEventListener("click", addYodishString)
- 
+//populates yodish object with translated string
+const populateYodish = (data) => 
+{
+  console.log(data);
+  let translated = data.contents.translated
+  addYodishString(translated);
+}
 
-function addYodishString(e){
-  e.preventDefault();
-
-  let userInput = userTextBox.value
-  getYodish(userInput)
-  let yodishString = yodishObject.translated
-
+//adds translated string to page
+function addYodishString(string){
+  console.log(string);
   let stringToOutput = document.getElementById('output')
-  stringToOutput.textContent = yodishString
-  stringToOutput.style.position = 'relative'
+  stringToOutput.textContent = string
+
+  stringToOutput.style.position = 'relative' //move to css
   stringToOutput.style.top = '60'
+  stringToOutput.style.left = '-150'
 
   upvoteArray.push(stringToOutput.textContent)
   addToHistory(upvoteArray)
 }
 
-
-//function that takes an array as a parameter, and populates the menu Tyler creates with values from it.
+//function that takes an array as a parameter, and populates the history with values from it.
 const addToHistory = upvoteArray => {
-  userTranslateButton.addEventListener('click', function(e){
-    e.preventDefault();
-    e.stopImmediatePropagation();
     let historyItem = document.createElement('tr')
     favoritesButton = document.createElement('button')
     const historyText = upvoteArray.slice(-1)
@@ -101,8 +97,16 @@ const addToHistory = upvoteArray => {
     favoritesButton.addEventListener('click', function(e){
       e.preventDefault();
       e.stopImmediatePropagation();
-      favoritesButton.innerHTML = ""
-      favoritesMenu.append(historyItem.textContent)
+      
+      let favoriteItem = historyItem
+      favoriteItem.textContent = historyItem.textContent.slice(0, -1)
+      favoritesMenu.append(favoriteItem)
     })
- })
 }
+
+//eventlistener that runs the getYodish function with a user provided string to return translation.
+userTranslateButton.addEventListener('click', (e) =>
+{
+  e.preventDefault();
+  getYodish(userTextBox.value);
+})
