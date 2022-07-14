@@ -1,11 +1,13 @@
 const {API_KEY} = config.API_KEY
-// !GOALS FOR THE REMAINDER OF THE PROJECT!
-//  Debug double click issue
-//  Look into scaling the website to different resolutions
-//  Fix color of text in favorites and history box
-//  Change Master at top to Sith when switching to the dark side
-//  Add fav's button to text in history and make that button append the text to favorites
 
+// !GOALS FOR THE REMAINDER OF THE PROJECT!
+// ! Debug double click issue
+// ! Fix color of text in favorites and history box
+
+//  Look into scaling the website to different resolutions
+
+// styling generated HTML via JS: 
+// (element.style.CSSproperties = property wanted as a string)
 
 //global declarations
 let url = 'https://api.funtranslations.com/translate/yoda.json'
@@ -15,6 +17,8 @@ const userTextBox = document.getElementById('new-yodish-string')
 const newYodishStringOutput = document.getElementById('output')
 const lightDarkButton = document.getElementById('light-dark')
 const history = document.getElementById('yodism-history-nest')
+const favoritesMenu = document.getElementById('table-values')
+let favoritesButton = document.createElement('button')
 const upvoteArray = []
 let image1 = true;
 document.body.style.color = '#2FF924';
@@ -47,40 +51,58 @@ lightDarkButton.addEventListener('click', function (e) {
     //go to image2
     image1 = false;
     document.body.style.color = '#EB212E';
+    const newTitle = document.getElementById('title-text')
+    newTitle.textContent = 'Wise Words of Sith Yoda'
   }
   else if(image1 === false) {
     document.body.style.backgroundImage = "url('assets/yoda1.jpg')";
     //revert to image1
     image1 = true;
     document.body.style.color = '#2FF924';
+    const newTitle = document.getElementById('title-text')
+    newTitle.textContent = 'Wise Words of Master Yoda'
   }
 })
 
 //eventlistener that runs the getYodish function with a user provided string to return conversion
-userTranslateButton.addEventListener('click', function (e){
-    e.preventDefault();
+userTranslateButton.addEventListener("click", addYodishString)
+ 
 
-    let userInput = userTextBox.value
-    getYodish(userInput)
-    let yodishString = yodishObject.translated
+function addYodishString(e){
+  e.preventDefault();
 
-    let stringToOutput = document.createElement('p')
-    stringToOutput.textContent = yodishString
-    newYodishStringOutput.append(stringToOutput)
+  let userInput = userTextBox.value
+  getYodish(userInput)
+  let yodishString = yodishObject.translated
 
-    upvoteArray.push(stringToOutput.textContent)
-    console.log(upvoteArray)
-    
-    addToHistory(upvoteArray)
-})
+  let stringToOutput = document.getElementById('output')
+  stringToOutput.textContent = yodishString
+  stringToOutput.style.position = 'relative'
+  stringToOutput.style.top = '60'
+
+  upvoteArray.push(stringToOutput.textContent)
+  addToHistory(upvoteArray)
+}
+
 
 //function that takes an array as a parameter, and populates the menu Tyler creates with values from it.
 const addToHistory = upvoteArray => {
   userTranslateButton.addEventListener('click', function(e){
     e.preventDefault();
+    e.stopImmediatePropagation();
+    let historyItem = document.createElement('tr')
+    favoritesButton = document.createElement('button')
     const historyText = upvoteArray.slice(-1)
-    let tr = document.createElement('tr')
-    tr.textContent = historyText
-    history.append(tr)
-  })
+    favoritesButton.innerHTML = ' ☆'
+    historyItem.textContent = historyText
+    history.append(historyItem)
+    historyItem.appendChild(favoritesButton)
+    
+    favoritesButton.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      favoritesButton.innerHTML = ""
+      favoritesMenu.append(historyItem.textContent)
+    })
+ })
 }

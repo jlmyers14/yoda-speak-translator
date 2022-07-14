@@ -8,14 +8,6 @@
     src: url('SF Distant Galaxy.ttf');
 }
 
-/* trying to get the text to crawl up the screen on loading the page */
-/* .crawl {
-    position: fixed;
-    top: 99999px;
-    transform-origin: 50% 100%;
-    animation: crawl 60s linear;
-  } */
-
 #header {
     font-family: StarJedi;
 }
@@ -34,7 +26,8 @@ h1 {
     font-size: 25px;
     top: 200px;
     font-family: StarJedi;
-    text-align: center;
+    /* text-align: center; */
+    margin-left: 31%;
 }
 
 ul {
@@ -77,22 +70,23 @@ body p{
 
     position: fixed;
     text-align: left;
-    top: 950px;
+    top: 980px;
     left: -25px;
 }
 
 input[type="text"]{
-    width: 400px;
+    width: 655px;
     height: 25px;
     border-radius: 25px;
     font-family: StarJedi2;
+    margin-left: -120px;
 }
 
 #user-input{
     border-radius: 10px;
     position: fixed;
-    left: 1088px;
-    top: 240px;
+    left: 1221px;
+    top: 270px;
 }
 
 #user-input:hover{
@@ -160,3 +154,20 @@ input[type="text"]{
     box-shadow: 3px 4px antiquewhite;
     right: 1600px;
 }
+
+#output{
+    font-size: 25px;
+    top: 200px;
+    font-family: StarJedi;
+    /* text-align: center; */
+    margin-left: 31%;
+}
+
+
+/* trying to get the text to crawl up the screen on loading the page */
+/* .crawl {
+    position: fixed;
+    top: 99999px;
+    transform-origin: 50% 100%;
+    animation: crawl 60s linear;
+  } */
