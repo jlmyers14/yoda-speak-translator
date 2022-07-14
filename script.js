@@ -1,12 +1,8 @@
 const {API_KEY} = config.API_KEY
 
 // !GOALS FOR THE REMAINDER OF THE PROJECT!
-// ! Fix color of text in favorites and history box - Dumb Chrome Bug
-
-//  Look into scaling the website to different resolutions
-
-// styling generated HTML via JS: 
-// (element.style.CSSproperties = property wanted as a string)
+// Fix color of text in favorites and history box - Dumb Chrome Bug
+// ! Look into scaling the website to different resolutions
 
 //global declarations
 let url = 'https://api.funtranslations.com/translate/yoda.json'
@@ -22,7 +18,6 @@ let image1 = true;
 document.body.style.color = '#2FF924';
 
 //function to apply a string to the yodish api
-
 function getYodish(stringToConvert){
   const configPolicy = {
     method: "GET",
@@ -36,9 +31,6 @@ function getYodish(stringToConvert){
   .then((data) => data.json())
   .then((data) => populateYodish(data))
 }
-
-// Fixed double click issue. Click listeners creating other click listeners. 
-// (issue with scope of click listeners)
 
 //eventlistener that allows user to switch between the light and dark side
 lightDarkButton.addEventListener('click', function (e) {
