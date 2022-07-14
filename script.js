@@ -1,10 +1,11 @@
 const {API_KEY} = config.API_KEY
 // !GOALS FOR THE REMAINDER OF THE PROJECT!
 //  Debug double click issue
-//Look into scaling the website to different resolutions
-//  Add css styling to the favorites and yodism history
-//  Change box text to red when switching to the dark side
+//  Look into scaling the website to different resolutions
+//  Fix color of text in favorites and history box
 //  Change Master at top to Sith when switching to the dark side
+//  Add fav's button to text in history and make that button append the text to favorites
+
 
 //global declarations
 let url = 'https://api.funtranslations.com/translate/yoda.json'
