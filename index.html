@@ -4,50 +4,69 @@
   <head>
     <link rel="stylesheet" href="style.css"/>
     <script type='text/javascript' src="config.js" defer></script>
-    <link rel="shortcut icon" type="image/jpg" href="./assets/kindpng_1149725.png"/>
     <script src="script.js" defer></script>
-    <title>Yodish Translator</title>
+    <link rel="shortcut icon" type="image/jpg" href="./assets/kindpng_1149725.png"/>
+    <!-- <script>document.body.style.backgroundImage = "url('assets/yoda1.jpg')"</script> -->
   </head>
 
-  <header id="header">
-    <h1>Wise Words of Master Yoda</h1>
-      <div class = "header-image">
-      </h1>
-    <h2 id="speak-like-yoda-text">Learn to speak like Yoda you can!</h2>
-    <p>Ever have you wanted to sound wise beyond one's years? 
-      <br>But have the knowledge or vocabulary you didn't? 
-      <br>For you, this English to Yoda text translator is:
-    </p>
+  <body id="background-image">
+    <header id="header">
+      <title>Yodish Translator</title>
+        <h1 id="title-text">Wise Words of Master Yoda</h1>
+          <div class = "header-image">
+        </h1>
+  
+      <h2 id="speak-like-yoda-text">Learn to speak like Yoda you can.</h2>
+      <button id="light-dark" type="button" value="Light/Dark">Switch to Light/Dark Side</button>
+      <p>Ever have you wanted to sound wise beyond one's years? 
+        <br>But have the knowledge or vocabulary you didn't? 
+        <br>For you, this English to Yoda text translator is:
+      </p>
     </header>
 
-<body id="background-image"></body>
-
-  <body id="text-body">
-    <!-- <p>Example: Master Obiwan has left on a journey.
-      <br>
-        Left on a journey, Master Obiwan has.
-    </p> -->
     <form class="new-yodish">
         <br>
            
         <input type="text" name="yodish" id="new-yodish-string" 
-        placeholder="Goes here, your input text does."value = "" />
+        placeholder="Goes here, your input text does." value = "" />
 
         <input id="user-input" type="submit" value="Translate" />
     </form>
-    <div id='output'>
-      
-    </div>
-  </body>
+    
+    <div id='output'></div>
 
-  <footer id="footer">
-    <div>
-        <ul id="footer-text">
-            <li>Authors: Garret Gallant, Justin Myers, Tyler DiRaffaele</li>
-            <li>Publication Date: July 11th, 2022</li>
-            <li>Credit to APi: Yoda Speak (https://funtranslations.com/yoda)</li>
-        </ul>
+    <div class="upvote-section">
+      <table id = 'table-values'>
+        <th>Favorite Yodisms</th>
+  <!--Create new td for each new favorite Yodism-->
+        </table>
+      
+      <!-- <span id="upvote-count"> 0 upvotes</span> -->
+      <!-- <button id="upvote-button">↑</button> -->
+    </div> 
+
+    <div class="yodism-history">
+      <table>
+        <th class='yodism-history-inner'>Yodism History</th>
+        <tr id='yodism-history-nest'>
+          <td>JUST FOR TESTING</td>
+        </tr>
+        <tr>
+          <td>JUST FOR TESTING</td>
+        </tr>
+
+      </table>
     </div>
-  </footer>
-  
+
+    <footer id="footer">
+      <div>
+          <ul id="footer-text">
+              <li>Authors: Garret Gallant, Justin Myers, Tyler DiRaffaele</li>
+              <li>Publication Date: July 11th, 2022</li>
+              <li>Credit to APi: Yoda Speak (https://funtranslations.com/yoda)</li>
+          </ul>
+      </div>
+    </footer>
+
+  </body>
 </html>

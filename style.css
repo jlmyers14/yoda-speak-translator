@@ -10,14 +10,13 @@
 
 /* trying to get the text to crawl up the screen on loading the page */
 /* .crawl {
-    position: relative;
+    position: fixed;
     top: 99999px;
     transform-origin: 50% 100%;
     animation: crawl 60s linear;
   } */
 
 #header {
-    color: #faebd7;
     font-family: StarJedi;
 }
 
@@ -35,6 +34,7 @@ h1 {
     font-size: 25px;
     top: 200px;
     font-family: StarJedi;
+    text-align: center;
 }
 
 ul {
@@ -42,21 +42,43 @@ ul {
     font-family: StarJedi;
 }
 
+#light-dark{
+    position: fixed;
+    left: 870px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+#light-dark:hover {
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
 #background-image {
-    color: #faebd7;
-    text-align: center;
     background-image: url('assets/yoda1.jpg');
     background-size: cover;
+}
+
+body p{
+    text-align: center;
     width: 1920px;
     font-family: StarJedi;
 }
 
+#title-text{
+    text-align: center;
+    width: 1920px;
+    font-family: StarJedi;
+    
+}
+
 #footer-text {
-    color: #faebd7;
-    position: relative;
-    margin-top: 730px;
+
+    position: fixed;
     text-align: left;
-    right: 40px;
+    top: 950px;
+    left: -25px;
 }
 
 input[type="text"]{
@@ -67,12 +89,74 @@ input[type="text"]{
 }
 
 #user-input{
-    border-radius: 25px;
-    position: relative;
-    left: -78px;
-    top: -2px;
+    border-radius: 10px;
+    position: fixed;
+    left: 1088px;
+    top: 240px;
+}
+
+#user-input:hover{
+    border-radius: 100px;
+    position: fixed;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 #string-output{
     text-align: center;
+}
+
+.new-yodish {
+    position: fixed;
+    left: 760px;
+}
+
+.upvote-section{
+    position: fixed;
+    /* move whole div here */
+    font-family: StarJedi;
+}
+
+#table-values{
+    font-family: StarJedi;
+    
+    position: fixed;
+    margin-top: 10px;
+}
+
+#upvote-button{
+    position: fixed;
+    margin-left: 10px;
+}
+
+.yodism-history table{
+    font-family: StarJedi;
+    position: fixed;
+    margin-top: 15px;
+    
+    position: fixed;
+    top: 500px;
+    text-align: left;
+    border: antiquewhite solid 1px;
+    padding: 8px;
+    width: 600px;
+    height: 25rem;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 3px 4px antiquewhite;
+    right: 1600px;
+}
+
+.upvote-section table{
+    position: fixed;
+    top: 70px;
+    text-align: left;
+    border: antiquewhite solid 1px;
+    padding: 8px;
+    width: 600px;
+    height: 25rem;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 3px 4px antiquewhite;
+    right: 1600px;
 }
