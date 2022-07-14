@@ -1,4 +1,4 @@
-// const {API_KEY} = config.API_KEY
+const {API_KEY} = config.API_KEY
 
 // !GOALS FOR THE REMAINDER OF THE PROJECT!
 // ! Fix color of text in favorites and history box - Dumb Chrome Bug
@@ -27,7 +27,7 @@ function getYodish(stringToConvert){
   const configPolicy = {
     method: "GET",
     headers: {
-      "X-FunTranslations-Api-Secret": 'kS682ejBG9yP5ldaGbyOUQeF'
+      "X-FunTranslations-Api-Secret": API_KEY
     }
   }
   let newUrl = `${url}?text=${stringToConvert}`
