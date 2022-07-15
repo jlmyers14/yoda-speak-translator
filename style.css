@@ -23,11 +23,11 @@ h1 {
 }
 
 #speak-like-yoda-text {
+    position: relative;
+    margin-bottom: 1%;
     font-size: 25px;
-    top: 200px;
     font-family: StarJedi;
-    /* text-align: center; */
-    margin-left: 30%;
+    left: 36%;
 }
 
 ul {
@@ -37,8 +37,8 @@ ul {
 
 #light-dark{
     position: fixed;
-    left: 870px;
-    margin-bottom: 5px;
+    left: 46.5%;
+    margin-bottom: 4%;
     border-radius: 10px;
 }
 
@@ -50,7 +50,7 @@ ul {
 
 #background-image {
     background-image: url('assets/yoda1.jpg');
-    background-size: cover;
+    background-size: 120%;
 }
 
 body p{
@@ -67,11 +67,11 @@ body p{
 }
 
 #footer-text {
-
     position: fixed;
     text-align: left;
-    top: 980px;
-    left: -25px;
+    top: 93%;
+    left:-1.5%;
+    font-size: 10pt;
 }
 
 input[type="text"]{
@@ -83,10 +83,11 @@ input[type="text"]{
 }
 
 #user-input{
-    border-radius: 10px;
+    border-radius: 20px;
+    border-color: black;
     position: fixed;
-    left: 1221px;
-    top: 270px;
+    left: 64%;
+    top: 34.1%;
 }
 
 #user-input:hover{
@@ -129,30 +130,28 @@ input[type="text"]{
     margin-top: 15px;
     
     position: fixed;
-    top: 500px;
+    top: 10%;
     text-align: left;
-    border: antiquewhite solid 1px;
+    border: gray solid 1px;
     padding: 8px;
-    width: 600px;
-    height: 25rem;
+    width: 18%;
+    height: 48rem;
     display: inline-grid;
     margin: 1rem 2rem;
-    box-shadow: 3px 4px antiquewhite;
-    right: 1600px;
+    right: 80%;
 }
 
-.upvote-section table{
+.favorite-section table{
     position: fixed;
-    top: 70px;
+    top: 10.7%;
     text-align: left;
-    border: antiquewhite solid 1px;
+    border: gray solid 1px;
     padding: 8px;
-    width: 600px;
-    height: 25rem;
+    width: 18%;
+    height: 51rem;
     display: inline-grid;
     margin: 1rem 2rem;
-    box-shadow: 3px 4px antiquewhite;
-    right: 1600px;
+    right: -28px;
 }
 
 #output{
